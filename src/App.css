@@ -1,39 +1,46 @@
-.App {
-  text-align: center;
+.calculator {
+  display: grid;
+  grid-template-columns: 1.2fr 1.2fr 1.1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 0 0;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "result result result result"
+    ". . . ."
+    ". . . ."
+    ". . . ."
+    ". . . ."
+    "zero zero . .";
+  max-width: 500px;
+  min-width: 300px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.zero {
+  grid-area: zero;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.calculator div {
   display: flex;
-  flex-direction: column;
+  border: 1px grey solid;
   align-items: center;
+  height: 50px;
+}
+
+.calculator div:not(.result) {
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.calculator div:not(.result, .orange) {
+  background-color: rgb(224, 224, 224);
+}
+
+.result {
+  grid-area: result;
+  justify-content: end;
+  background-color: rgb(133, 134, 148);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
+.orange {
+  background-color: rgb(245, 144, 62);
 }
