@@ -25,7 +25,7 @@ const Calculator = () => (
       <div>3</div>
       <div className="orange">+</div>
       {/* Numbers */}
-      <div className="zero">Zero</div>
+      <div className="zero">0</div>
       <div>.</div>
       <div className="orange">=</div>
     </div>
