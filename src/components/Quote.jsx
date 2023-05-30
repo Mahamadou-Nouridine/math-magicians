@@ -16,7 +16,7 @@ const Quote = () => {
       }
     };
     callFecthApi();
-  }, []);
+  }, [setQuote, setError]);
   return (
     <>
       {!quote && !error ? <p>...loading</p> : error && !quote ? <p>{error}</p> : <p>{quote}</p>}
