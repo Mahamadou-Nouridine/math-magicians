@@ -19,8 +19,12 @@ const ResultView = ({ obj }) => (!obj ? (
 export default ResultView;
 
 ResultView.defaultProps = {
-  obj: 0,
+  obj: {},
 };
 ResultView.propTypes = {
-  obj: PropTypes.number,
+  obj: PropTypes.shape({
+    total: PropTypes.string,
+    operation: PropTypes.string,
+    next: PropTypes.string,
+  }),
 };

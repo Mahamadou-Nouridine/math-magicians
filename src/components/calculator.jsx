@@ -3,7 +3,7 @@ import calculate from '../logic/calculate';
 import ResultView from './ResultView';
 
 const Calculator = () => {
-  const [obj, setObj] = useState(false);
+  const [obj, setObj] = useState({});
 
   const clickHandler = (e) => {
     setObj((state) => calculate(state, e.target.innerText));
