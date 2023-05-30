@@ -1,35 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
+import calculate from '../logic/calculate';
+import ResultView from './ResultView';
 
-const Calculator = () => (
-  <>
-    <div className="calculator">
-      <div className="result">0</div>
-      {/* symboles */}
-      <div>AC</div>
-      <div>+/-</div>
-      <div>%</div>
-      <div className="orange">÷</div>
-      {/* symboles */}
+const Calculator = () => {
+  const [obj, setObj] = useState(false);
 
-      {/* Numbers */}
-      <div>7</div>
-      <div>8</div>
-      <div>9</div>
-      <div className="orange">&#215;</div>
-      <div>4</div>
-      <div>5</div>
-      <div>6</div>
-      <div className="orange">-</div>
-      <div>1</div>
-      <div>2</div>
-      <div>3</div>
-      <div className="orange">+</div>
-      {/* Numbers */}
-      <div className="zero">0</div>
-      <div>.</div>
-      <div className="orange">=</div>
-    </div>
-  </>
-);
+  const clickHandler = (e) => {
+    setObj((state) => calculate(state, e.target.innerText));
+  };
+  return (
+    <>
+      <div className="calculator">
+        <ResultView obj={obj} />
+        {/* symboles */}
+        <button type="button" onClick={clickHandler}>AC</button>
+        <button type="button" onClick={clickHandler}>+/-</button>
+        <button type="button" onClick={clickHandler}>%</button>
+        <button type="button" className="orange" onClick={clickHandler}>÷</button>
+        {/* symboles */}
+
+        {/* Numbers */}
+        <button type="button" onClick={clickHandler}>7</button>
+        <button type="button" onClick={clickHandler}>8</button>
+        <button type="button" onClick={clickHandler}>9</button>
+        <button type="button" className="orange" onClick={clickHandler}>x</button>
+        <button type="button" onClick={clickHandler}>4</button>
+        <button type="button" onClick={clickHandler}>5</button>
+        <button type="button" onClick={clickHandler}>6</button>
+        <button type="button" className="orange" onClick={clickHandler}>-</button>
+        <button type="button" onClick={clickHandler}>1</button>
+        <button type="button" onClick={clickHandler}>2</button>
+        <button type="button" onClick={clickHandler}>3</button>
+        <button type="button" className="orange" onClick={clickHandler}>+</button>
+        {/* Numbers */}
+        <button type="button" className="zero" onClick={clickHandler}>0</button>
+        <button type="button" onClick={clickHandler}>.</button>
+        <button type="button" className="orange" onClick={clickHandler}>=</button>
+      </div>
+    </>
+  );
+};
 
 export default Calculator;
