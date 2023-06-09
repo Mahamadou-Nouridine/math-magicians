@@ -12,6 +12,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.12.1",
     "react-scripts": "5.0.1",
+    "serve": "^14.2.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -20,7 +21,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "stylelint": "npx stylelint \"**/*.{css,scss}\" --fix",
-    "eslint": "npx eslint \"**/*.{js,jsx}\" --fix"
+    "eslint": "npx eslint \"**/*.{js,jsx}\" --fix",
+    "serve": "serve -s build"
   },
   "eslintConfig": {
     "extends": [
