@@ -1,7 +1,6 @@
-/* eslint-disable import/no-extraneous-dependencies */
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import React from 'react';
 import './App.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Layout from './routes/Layout';
 import Home from './routes/Home';
 import Quote from './routes/Quote';

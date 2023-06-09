@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import { Link } from 'react-router-dom';
 import styles from './styles/Navbar.module.css';
 

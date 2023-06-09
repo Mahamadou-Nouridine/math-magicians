@@ -1,5 +1,4 @@
-/* eslint-disable import/extensions */
-import Calculator from '../components/Calculator.jsx';
+import Calculator from '../components/Calculator';
 import styles from './styles/Calculator.module.css';
 
 const CalculatorRoute = () => (
